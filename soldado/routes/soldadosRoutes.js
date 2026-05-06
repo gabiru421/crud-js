@@ -6,7 +6,7 @@ import{
     getSoldado,
     updateSoldado,
     deleteSoldado,
-}from "../controllers/soldadoController.js";
+}from "../controllers/controllerSoldado.js";
 
 const router = Router();
 

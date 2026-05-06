@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import express from 'express';
-import userRoutes from './routes/userRoutes.js';    
-import { sequelize, connectDB } from './config/database.js';
+import soldadosRoutes from './routes/soldadosRoutes.js';
+import { sequelize, connectDB } from './config/databaseSol.js';
 
 
 const app = express();

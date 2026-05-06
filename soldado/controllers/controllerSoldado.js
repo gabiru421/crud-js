@@ -1,16 +1,14 @@
 import {Soldado} from '../models/Soldado.js';
 
 export const createSoldado = async (req, res) => {
-    try{
+    try {
         const soldado = await Soldado.create(req.body);
-        return res.status(201).json(soldado);
-    }catch(error){
-        return res.status(500).json({ message: error.message });
-
-
+        res.status(201).json(soldado);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ erro: 'Erro ao criar soldado' });
     }
-
-}
+};
 
 export const getSoldados = async (req, res) =>{
     try{
@@ -25,15 +23,15 @@ export const getSoldados = async (req, res) =>{
 
 export const getSoldado = async (req, res) => {
     try{
-        const soldado =await Soldado.findByPk(req.params.id);
+        const soldado = await Soldado.findByPk(req.params.id);
+
         if(!soldado){
             return res.status(404).json({message:'Soldado not Found'});
         }
-        await soldado.update(req.body);
-        return res.status(200).json(soldado);
 
+        return res.status(200).json(soldado);
     }catch(error){
-       return res.status(500).json ({message:error.message});
+        return res.status(500).json({message:error.message});
     }
 }
 
@@ -43,7 +41,10 @@ export const updateSoldado = async (req, res) => {
         if(!soldado){
             return res.status(404).json({message:'Soldado not Found'});
         }
+
+        await soldado.update(req.body);
         return res.status(200).json(soldado);
+
         }catch(error){
        return res.status(500).json ({message:error.message});
     }
