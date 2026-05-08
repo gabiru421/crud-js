@@ -12,7 +12,7 @@ const router = Router();
 
 /**
  * @swagger
- * /api/soldados:
+ * /soldados:
  *   post:
  *     summary: Cria um usuário
  *     tags:
@@ -41,7 +41,7 @@ router.post("/soldados", createSoldado);
 
 /**
  * @swagger
- * /api/soldados:
+ * /soldados:
  *   get:
  *     summary: Lista todos os soldados
  *     tags:
@@ -56,7 +56,7 @@ router.get("/soldados", getSoldados);
 
 /**
  * @swagger
- * /api/soldados/{id}:
+ * /soldados/{id}:
  *   get:
  *     summary: Busca um soldado por ID
  *     tags:
@@ -77,7 +77,7 @@ router.get("/soldados/:id", getSoldado);
 
 /**
  * @swagger
- * /api/soldados/{id}:
+ * /soldados/{id}:
  *   put:
  *     summary: Atualiza um soldado
  *     tags:
@@ -113,7 +113,7 @@ router.put("/soldados/:id", updateSoldado);
 
 /**
  * @swagger
- * /api/soldados/{id}:
+ * /soldados/{id}:
  *   delete:
  *     summary: Remove um soldado
  *     tags:
