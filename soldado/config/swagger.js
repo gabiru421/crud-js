@@ -5,12 +5,13 @@ const options = {
         openapi: "3.0.0",
         info:{
             title: "API de CRUD",
-            //version: "1.0.0",
+            version: "1.0.0",
             description: "Documentação da API de CRUD NODE.JS",
         },
-        severs: [
+        servers: [
             {
                 url: "http://localhost:3000/api",
+                description:"Servidor aula de TDS",
             },
         ],
 
